@@ -1,27 +1,31 @@
-import React from "react";
+import { FaPaperPlane } from "react-icons/fa";
 import { useState } from "react";
 
-const InputBar = () => {
-  const [msg, setMsg] = useState("");
+const InputBar = ({value, onChange, onSend}) => {
+  const [input, setInput] = useState(value || "");
+
+  const handleSend = e => {
+    e.preventDefault();
+    if (input.trim().length) {
+      onSend(input);
+      setInput("");
+    }
+  };
   return (
-    <form
-      className="flex p-4 bg-white border-t"
-      onSubmit={(e) => {
-        e.preventDefault(); /* handle send */
-      }}
-    >
+     <form className="bg-bg-light rounded-md p-2 flex items-center gap-2 mx-4 my-1"
+          onSubmit={handleSend}>
       <input
         type="text"
-        value={msg}
-        onChange={(e) => setMsg(e.target.value)}
-        className="flex-1 border rounded-l px-3 py-2 focus:outline-none"
-        placeholder="Type your message..."
+        value={input}
+        onChange={e => {
+          setInput(e.target.value);
+          onChange && onChange(e.target.value);
+        }}
+        className="flex-1 px-4 py-2 rounded-full bg-bg-light focus:outline-none transition text-sm"
+        placeholder="Type in your messages..."
       />
-      <button
-        type="submit"
-        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-r"
-      >
-        Send
+      <button type="submit" className="p-3 bg-highlight/30 rounded-full hover:bg-highlight transition cursor-pointer">
+        <FaPaperPlane className="text-text text-md" />
       </button>
     </form>
   );

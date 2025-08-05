@@ -56,7 +56,7 @@ const chatsMock = [
 export default function ChatSidebar() {
 
   return (
-    <div className="max-w-xs w-full bg-bg border-1 border-border shadow-xl p-4 flex flex-col h-[84vh] mx-auto rounded-md">
+    <div className="max-w-xs w-full bg-bg border-1 border-border shadow-xl p-4 flex flex-col h-[88vh] mx-auto rounded-md">
       {/* Chats Title */}
       <h2 className="font-bold text-md mb-4 text-text-muted text-left">Chats</h2>
 
