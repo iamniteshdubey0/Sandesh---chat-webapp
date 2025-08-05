@@ -46,7 +46,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: rgba(120, 120, 150, 0.23);
+    background: transparent;
     /* subtle thumb, change to match your theme if needed */
     border-radius: 3px;
   }

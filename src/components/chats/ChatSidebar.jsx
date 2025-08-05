@@ -91,8 +91,8 @@ export default function ChatSidebar() {
       </div>
 
       {/* New Chat Button */}
-      <button className="mt-4 flex items-center justify-center gap-2 w-full rounded-lg bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2 shadow">
-        <FaPlus className="text-white" />
+      <button className="mt-4 flex items-center justify-center gap-2 w-full rounded-lg bg-highlight/70 hover:bg-highlight text-text font-semibold py-2 shadow cursor-pointer">
+        <FaPlus className="text-text" />
         New Chat
       </button>
     </div>

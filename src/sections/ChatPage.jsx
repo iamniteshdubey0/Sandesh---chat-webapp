@@ -1,4 +1,5 @@
 import ChatScreen from "../components/chats/ChatScreen";
+import ChatSettings from "../components/chats/ChatSettings";
 import ChatSidebar from "../components/chats/ChatSidebar";
 import ChatWindow from "../components/chats/ChatWindow";
 
@@ -10,9 +11,12 @@ const ChatPage = () => {
           <div className="p-2">
             <ChatSidebar></ChatSidebar>
           </div>
-          <div className="col-span-3">
+          <div className="col-span-2">
             {/* <ChatScreen /> */}
             <ChatWindow />
+          </div>
+          <div className="p-2">
+            <ChatSettings></ChatSettings>
           </div>
         </div>
       </div>
