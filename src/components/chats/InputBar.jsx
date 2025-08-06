@@ -21,7 +21,7 @@ const InputBar = ({value, onChange, onSend}) => {
           setInput(e.target.value);
           onChange && onChange(e.target.value);
         }}
-        className="flex-1 px-4 py-2 rounded-full bg-bg-light focus:outline-none transition text-sm"
+        className="flex-1 px-4 py-2 text-text-muted rounded-full bg-bg-light focus:outline-none transition text-sm"
         placeholder="Type in your messages..."
       />
       <button type="submit" className="p-3 bg-highlight/30 rounded-full hover:bg-highlight transition cursor-pointer">

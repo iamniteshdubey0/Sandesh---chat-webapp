@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav className="fixed w-full z-40 transition-all duration-300 py-2 bg-bg backdrop-blur-md shadow-xs">
       <div className="flex items-center justify-between px-4 py-2 md:py-1">
         {/* left: Logo and Brand Name */}
-        <div className="flex-1 flex items-center justify-start space-x-4">
+        <div className="flex-1 flex items-center justify-start space-x-2">
           <FaMessage></FaMessage>
           <span className="text-xl font-semibold text-text inline">
             Sandesh

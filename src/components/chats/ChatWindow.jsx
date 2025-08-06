@@ -64,7 +64,7 @@ const messages = [
   }
 ];
 
-const ChatWindow = () => {
+const ChatWindow = ({ showSettings, onToggleSettings }) => {
   const [allMessages, setAllMessages] = useState(messages);
 
   const handleSend = (msgText) => {
@@ -93,7 +93,10 @@ const ChatWindow = () => {
               <span>Online</span>
             </div>
           </div>
-          <FaEllipsisH className="text-text-muted/60 text-xl cursor-pointer" />
+          <FaEllipsisH
+              className="text-text-muted/60 text-xl cursor-pointer"
+              onClick={onToggleSettings}
+          />
         </div>
 
         {/* Messages */}

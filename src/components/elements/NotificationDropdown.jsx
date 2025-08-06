@@ -33,7 +33,7 @@ const NotificationDropdown = () => {
 
       {/* Dropdown */}
       {open && (
-        <div className="absolute right-0 mt-2 w-80 max-h-86 bg-bg border border-border rounded-lg shadow-lg z-50 cursor-pointer px-2 py-3">
+        <div className="absolute right-0 top-10 mt-2 w-80 max-h-86 bg-bg border border-border rounded-lg shadow-lg z-50 cursor-pointer px-2 py-3">
           <h2 className="text-md font-semibold mb-4">Notifications</h2>
           <div className="space-y-4 ">
             {/* Notification List */}

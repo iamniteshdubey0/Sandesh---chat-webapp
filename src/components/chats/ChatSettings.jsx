@@ -1,5 +1,6 @@
 import React from "react";
-import { FaClock, FaPaperclip, FaPhone, FaPlus, FaVideo } from "react-icons/fa";
+import { FaPaperclip, FaPhone, FaPlus, FaVideo } from "react-icons/fa";
+import { FaX } from "react-icons/fa6";
 
 const chatsMock = [
   {
@@ -53,9 +54,10 @@ const chatsMock = [
   },
 ];
 
-const ChatSettings = () => {
+const ChatSettings = ({ showSettings, onToggleSettings }) => {
   return (
-    <div className="max-w-xs w-full bg-bg border-1 border-border shadow-xl p-4 flex flex-col h-[88vh] mx-auto rounded-md">
+    <div className="md:max-w-xs w-full bg-bg border-1 border-border shadow-xl p-4 flex flex-col sm:h-[95vh] md:h-[88vh] md:mx-auto rounded-md">
+      <button onClick={onToggleSettings} className="md:hidden flex justify-end py-2 mb-4"><FaX size={20} className="text-text-muted" /></button>
       <div className="flex flex-col items-center justify-center bg-bg-light px-3 py-2 rounded-lg border gap-4">
         <div className="flex flex-col items-center justify-center text-center space-y-2 focus:outline-none cursor-pointer">
           <img
@@ -79,9 +81,15 @@ const ChatSettings = () => {
 
       {/* Shared File */}
       <div className="flex-1 pr-1 mt-2 space-y-1">
-        <h2 className="font-bold text-md mb-2 mt-2 text-text-muted text-left">
-          Shared files
-        </h2>
+        <div className="flex justify-between items-center rounded-lg gap-1">
+          <h2 className="font-bold text-md mb-1 mt-1 text-text-muted text-left">
+            Shared Files
+          </h2>
+
+          <a href="#" className="text-text-muted text-sm hover:text-text">
+            View all
+          </a>
+        </div>
 
         <div className="flex items-center justify-between px-3 py-1 hover:bg-bg-light rounded-md">
           <div className="flex items-center space-x-2 focus:outline-none cursor-pointer">
@@ -122,11 +130,17 @@ const ChatSettings = () => {
 
       {/* Shared Media */}
       <div className="flex-1 pr-1 mt-2 space-y-1">
-        <h2 className="font-bold text-md mb-2 mt-2 text-text-muted text-left">
-          Shared Media
-        </h2>
+        <div className="flex justify-between items-center rounded-lg gap-1">
+          <h2 className="font-bold text-md mb-1 mt-1 text-text-muted text-left">
+            Shared Media
+          </h2>
 
-        <div className="flex flex-wrap rounded-lg overflow-y-scroll gap-1">
+          <a href="#" className="text-text-muted text-sm hover:text-text">
+            View all
+          </a>
+        </div>
+
+        <div className="flex flex-wrap rounded-lg gap-1">
           <img
             src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=400&q=80"
             className="w-18 h-18 object-cover rounded-lg border"

@@ -38,7 +38,7 @@ const UserDropdown = () => {
 
       {/* Dropdown */}
       {open && (
-        <div className="absolute right-0 mt-2 w-44 bg-bg border border-border rounded-lg shadow-lg z-50 cursor-pointer">
+        <div className="absolute right-0 top-10 mt-2 w-44 bg-bg border border-border rounded-lg shadow-lg z-50 cursor-pointer">
           <button
             className="flex items-center w-full px-4 py-2 text-text hover:bg-bg-light rounded-lg cursor-pointer"
             onClick={() => {

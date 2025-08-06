@@ -56,14 +56,14 @@ const chatsMock = [
 export default function ChatSidebar() {
 
   return (
-    <div className="max-w-xs w-full bg-bg border-1 border-border shadow-xl p-4 flex flex-col h-[88vh] mx-auto rounded-md">
+    <div className="md:max-w-xs w-full bg-bg border-1 border-border shadow-xl p-4 flex flex-col h-[90vh] sm:h-[95vh] md:h-[88vh] mx-auto rounded-md">
       {/* Chats Title */}
       <h2 className="font-bold text-md mb-4 text-text-muted text-left">Chats</h2>
 
       {/* Search */}
       <input
         type="text"
-        className="w-full px-4 py-2 rounded-lg border border-border/60 focus:outline-none focus:border-border text-sm mb-4"
+        className="w-full px-4 py-2 text-text-muted rounded-lg border border-border/60 focus:outline-none focus:border-border text-sm mb-4"
         placeholder="Search name, contact, etc"
       />
 
