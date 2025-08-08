@@ -1,4 +1,4 @@
-import { FaEllipsisH } from "react-icons/fa";
+import { FaEllipsisH, FaArrowLeft } from "react-icons/fa";
 import { useState } from "react";
 import MessageBubble from "./MessageBubble";
 import InputBar from "./InputBar";
@@ -64,7 +64,7 @@ const messages = [
   }
 ];
 
-const ChatWindow = ({ showSettings, onToggleSettings }) => {
+const ChatWindow = ({ showSettings, onToggleSettings, selectedChat, onBackToSidebar }) => {
   const [allMessages, setAllMessages] = useState(messages);
 
   const handleSend = (msgText) => {
@@ -80,17 +80,40 @@ const ChatWindow = ({ showSettings, onToggleSettings }) => {
       },
     ]);
   };
+
+  // Use selectedChat data if available, otherwise use default
+  const chatName = selectedChat ? selectedChat.name : "Audrey Kelly";
+  const chatAvatar = selectedChat ? selectedChat.avatar : "https://randomuser.me/api/portraits/women/44.jpg";
+
   return (
     <div className="bg-bg-dark h-fit flex items-center justify-center mb-1">
       <div className="relative w-full bg-bg-dark/30 flex flex-col h-[88vh]">
 
         {/* Header */}
         <div className="flex items-center justify-between py-2 px-4 bg-bg-light rounded-md mx-4 my-2">
-          <div>
-            <div className="font-semibold text-lg text-text">Audrey Kelly</div>
-            <div className="flex items-center space-x-1 text-sm text-green-500">
-              <span className="w-2 h-2 rounded-full bg-green-500"></span>
-              <span>Online</span>
+          <div className="flex items-center">
+            {/* Back button for mobile */}
+            {onBackToSidebar && (
+              <button
+                onClick={onBackToSidebar}
+                className="mr-3 p-1 rounded-full hover:bg-highlight/20 transition-colors"
+              >
+                <FaArrowLeft className="text-text-muted text-lg" />
+              </button>
+            )}
+            <div className="flex items-center">
+              <img 
+                src={chatAvatar} 
+                alt={chatName} 
+                className="w-8 h-8 rounded-full object-cover mr-3 border"
+              />
+              <div>
+                <div className="font-semibold text-lg text-text">{chatName}</div>
+                <div className="flex items-center space-x-1 text-sm text-green-500">
+                  <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                  <span>Online</span>
+                </div>
+              </div>
             </div>
           </div>
           <FaEllipsisH

@@ -1,8 +1,9 @@
 
-import {FaPlus } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 
 const chatsMock = [
   {
+    id: 1,
     name: "David Nolan",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     lastMessage: "Aaron? Are you here?",
@@ -10,6 +11,7 @@ const chatsMock = [
     unread: false,
   },
   {
+    id: 2,
     name: "Audrey Kelly",
     avatar: "https://randomuser.me/api/portraits/women/44.jpg",
     lastMessage: "Ok, I will touch up this",
@@ -17,6 +19,7 @@ const chatsMock = [
     unread: true,
   },
   {
+    id: 3,
     name: "Brian Artemayev",
     avatar: "https://randomuser.me/api/portraits/men/34.jpg",
     lastMessage: "Why you have that stupid idea? i think this is very...",
@@ -24,6 +27,7 @@ const chatsMock = [
     unread: false,
   },
   {
+    id: 4,
     name: "Jessica Naomi",
     avatar: "https://randomuser.me/api/portraits/women/45.jpg",
     lastMessage: "I will handle that Aaron, Thanks!",
@@ -31,6 +35,7 @@ const chatsMock = [
     unread: false,
   },
   {
+    id: 5,
     name: "Albedo Greyhold",
     avatar: "https://randomuser.me/api/portraits/men/35.jpg",
     lastMessage: "Okay fine",
@@ -38,6 +43,7 @@ const chatsMock = [
     unread: false,
   },
   {
+    id: 6,
     name: "Amalia Chen",
     avatar: "https://randomuser.me/api/portraits/women/46.jpg",
     lastMessage: "Thank You!",
@@ -45,15 +51,16 @@ const chatsMock = [
     unread: false,
   },
   {
+    id: 7,
     name: "Rudi Hadisuwarno",
     avatar: "https://randomuser.me/api/portraits/men/36.jpg",
     lastMessage: "Woalah pie to ham",
     time: "11/04",
-    unread: false,
+    unread: true,
   }
 ];
 
-export default function ChatSidebar() {
+export default function ChatSidebar({ onOpenChat }) {
 
   return (
     <div className="md:max-w-xs w-full bg-bg border-1 border-border shadow-xl p-4 flex flex-col h-[90vh] sm:h-[95vh] md:h-[88vh] mx-auto rounded-md">
@@ -71,10 +78,11 @@ export default function ChatSidebar() {
       <div className="flex-1 overflow-y-auto pr-1 mt-2 space-y-1">
         {chatsMock.map((chat, i) => (
           <div
-            key={i}
+            onClick={() => onOpenChat(chat)}
+            key={chat.id}
             className={`
               flex items-center px-1 py-3 rounded-lg cursor-pointer 
-              ${chat.unread ? "bg-highlight/20 border-1 border-border" : "hover:bg-highlight/20"}
+              ${chat.unread ? "bg-highlight/80 border-1 border-border" : "hover:bg-highlight/20"}
               transition
             `}
           >
